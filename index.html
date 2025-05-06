@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mokotahi - Impact with Intelligence.</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"
+    ></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.162.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#projects">Projects</a></li>
+          <!-- <li><a href="#research">Research & Reports</a></li>
+          <li><a href="#labs">Labs</a></li> -->
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hero">
+        <h1 style="display: none">mokotahi</h1>
+        <div id="text-container"></div>
+        <p>Human Insight. Strategic Intelligence. Measurable Change.</p>
+      </div>
+    </header>
+
+    <main>
+      <section id="projects">
+        <h2>Selected Projects</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Zora</h3>
+            <div class="thumbnails-grid">
+              <div class="thumbnail" onclick="openCarouselModal(0)">
+                <img src="images/zora/home.png" alt="Zora Home Screen" />
+              </div>
+              <div class="thumbnail" onclick="openCarouselModal(1)">
+                <img src="images/zora/screen-1.png" alt="Zora Screen 1" />
+              </div>
+              <div class="thumbnail" onclick="openCarouselModal(2)">
+                <img src="images/zora/screen-2.png" alt="Zora Screen 2" />
+              </div>
+              <div class="thumbnail" onclick="openCarouselModal(3)">
+                <img src="images/zora/screen-3.png" alt="Zora Screen 3" />
+              </div>
+              <div class="thumbnail" onclick="openCarouselModal(4)">
+                <img src="images/zora/screen-4.png" alt="Zora Screen 4" />
+              </div>
+              <div class="thumbnail" onclick="openCarouselModal(5)">
+                <img src="images/zora/screen-5.png" alt="Zora Screen 5" />
+              </div>
+              <div class="thumbnail" onclick="openCarouselModal(6)">
+                <img src="images/zora/screen-6.png" alt="Zora Screen 6" />
+              </div>
+              <div class="thumbnail" onclick="openCarouselModal(7)">
+                <img src="images/zora/screen-7.png" alt="Zora Screen 7" />
+              </div>
+            </div>
+            <p>
+              Lightweight, LLM-powered mobile-first speaking-fluency screener.
+              Learners read short passages and answer questions based on their
+              interests, with fluency and grammar scores extracted from their
+              audio responses. Results map to CEFR/ACTFL bands and surface in an
+              assessment dashboard.
+            </p>
+          </div>
+          <div class="card">
+            <h3>AutoScript</h3>
+            <div class="thumbnails-grid">
+              <div class="thumbnail" onclick="openAutoScriptModal(0)">
+                <img
+                  src="images/autoscript/attorney.png"
+                  alt="AutoScript Attorney View"
+                />
+              </div>
+              <div class="thumbnail" onclick="openAutoScriptModal(1)">
+                <img
+                  src="images/autoscript/asw-dashboard.png"
+                  alt="AutoScript Dashboard"
+                />
+              </div>
+              <div class="thumbnail" onclick="openAutoScriptModal(2)">
+                <img
+                  src="images/autoscript/ai-analysis.png"
+                  alt="AI Analysis View"
+                />
+              </div>
+              <div class="thumbnail" onclick="openAutoScriptModal(3)">
+                <img
+                  src="images/autoscript/transcript-player.png"
+                  alt="Transcript Player"
+                />
+              </div>
+            </div>
+            <p>
+              Real-time and post-processing speech recognition platform for the
+              legal industry. The AutoScript platform enables court reporters to
+              rapidly reduce the turn-around time for producing legal
+              transcripts leveraging AI enhancement, court reporting agencies to
+              manage their workflow, and attorneys to review transcripts with
+              AI-assisted search and analysis.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <form
+          id="contactForm"
+          onsubmit="handleSubmit(event)"
+          class="contact-form"
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Let's Connect</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Mokotahi</p>
+      <button id="theme-toggle">Toggle Theme</button>
+    </footer>
+
+    <!-- Carousel Modal -->
+    <div id="carouselModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeCarouselModal()">&times;</span>
+        <div class="carousel-container">
+          <div class="carousel">
+            <img
+              src="images/zora/home.png"
+              alt="Zora Home Screen"
+              class="carousel-image active"
+            />
+            <img
+              src="images/zora/screen-1.png"
+              alt="Zora Screen 1"
+              class="carousel-image"
+            />
+            <img
+              src="images/zora/screen-2.png"
+              alt="Zora Screen 2"
+              class="carousel-image"
+            />
+            <img
+              src="images/zora/screen-3.png"
+              alt="Zora Screen 3"
+              class="carousel-image"
+            />
+            <img
+              src="images/zora/screen-4.png"
+              alt="Zora Screen 4"
+              class="carousel-image"
+            />
+            <img
+              src="images/zora/screen-5.png"
+              alt="Zora Screen 5"
+              class="carousel-image"
+            />
+            <img
+              src="images/zora/screen-6.png"
+              alt="Zora Screen 6"
+              class="carousel-image"
+            />
+            <img
+              src="images/zora/screen-7.png"
+              alt="Zora Screen 7"
+              class="carousel-image"
+            />
+          </div>
+          <button class="carousel-button prev" onclick="moveCarousel(-1)">
+            ❮
+          </button>
+          <button class="carousel-button next" onclick="moveCarousel(1)">
+            ❯
+          </button>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AutoScript Modal -->
+    <div id="autoScriptModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeAutoScriptModal()"
+          >&times;</span
+        >
+        <div class="carousel-container">
+          <div class="carousel">
+            <img
+              src="images/autoscript/attorney.png"
+              alt="AutoScript Attorney View"
+              class="carousel-image active"
+            />
+            <img
+              src="images/autoscript/asw-dashboard.png"
+              alt="AutoScript Dashboard"
+              class="carousel-image"
+            />
+            <img
+              src="images/autoscript/ai-analysis.png"
+              alt="AI Analysis View"
+              class="carousel-image"
+            />
+            <img
+              src="images/autoscript/transcript-player.png"
+              alt="Transcript Player"
+              class="carousel-image"
+            />
+          </div>
+          <button
+            class="carousel-button prev"
+            onclick="moveAutoScriptCarousel(-1)"
+          >
+            ❮
+          </button>
+          <button
+            class="carousel-button next"
+            onclick="moveAutoScriptCarousel(1)"
+          >
+            ❯
+          </button>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import * as THREE from "three";
+      import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
+      import { FontLoader } from "three/addons/loaders/FontLoader.js";
+
+      let scene, camera, renderer, textMesh;
+      const container = document.getElementById("text-container");
+      container.style.width = window.innerWidth + "px";
+      const stars = []; // Array to store star particles
+      let waterPlane; // Water plane mesh
+
+      // Create stars
+      function createStars() {
+        const starGeometry = new THREE.BufferGeometry();
+        const starMaterial = new THREE.PointsMaterial({
+          color: getCurrentColor(),
+          size: 0.05,
+          transparent: true,
+          opacity: 0.8,
+          sizeAttenuation: true,
+        });
+
+        const starVertices = [];
+        for (let i = 0; i < 1000; i++) {
+          const x = (Math.random() - 0.5) * 20;
+          const y = (Math.random() - 0.5) * 20;
+          const z = (Math.random() - 0.5) * 20;
+          starVertices.push(x, y, z);
+        }
+
+        starGeometry.setAttribute(
+          "position",
+          new THREE.Float32BufferAttribute(starVertices, 3)
+        );
+        const starField = new THREE.Points(starGeometry, starMaterial);
+        scene.add(starField);
+        return starField;
+      }
+
+      // Create water plane
+      function createWaterPlane() {
+        const planeGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
+        const planeMaterial = new THREE.MeshPhongMaterial({
+          color: 0x0077be,
+          transparent: true,
+          opacity: 0.6,
+          shininess: 100,
+          side: THREE.DoubleSide,
+        });
+
+        const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+        plane.rotation.x = Math.PI / 2;
+        plane.position.y = -3;
+        scene.add(plane);
+        return plane;
+      }
+
+      // Initialize Three.js scene
+      function init() {
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(
+          75,
+          container.clientWidth / container.clientHeight,
+          0.1,
+          1000
+        );
+
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
+
+        // Position camera
+        camera.position.z = 6;
+
+        // Create stars and water
+        const starField = createStars();
+        waterPlane = createWaterPlane();
+
+        // Add lights
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 1);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        const pointLight2 = new THREE.PointLight(0xffffff, 1);
+        pointLight2.position.set(-5, 5, -5);
+        scene.add(pointLight2);
+
+        // Load font and create text
+        const fontLoader = new FontLoader();
+        fontLoader.load(
+          "https://raw.githubusercontent.com/components-ai/typefaces/refs/heads/main/packages/font-inter/data/typefaces/normal-700.json",
+          function (font) {
+            const textGeometry = new TextGeometry("mokotahi", {
+              font: font,
+              size: 2.0,
+              height: 0.2,
+              curveSegments: 24,
+              bevelEnabled: true,
+              bevelThickness: 0.05,
+              bevelSize: 0.02,
+              bevelOffset: 0,
+              bevelSegments: 8,
+            });
+
+            textGeometry.center();
+
+            const material = new THREE.MeshPhongMaterial({
+              color: getCurrentColor(),
+              specular: 0xffffff,
+              shininess: 300,
+            });
+
+            textMesh = new THREE.Mesh(textGeometry, material);
+            scene.add(textMesh);
+
+            // Add lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+            scene.add(ambientLight);
+
+            const pointLight = new THREE.PointLight(0xffffff, 1.5);
+            pointLight.position.set(1, 1, 1);
+            scene.add(pointLight);
+
+            const pointLight2 = new THREE.PointLight(0xffffff, 1.5);
+            pointLight2.position.set(-5, -5, 5);
+            scene.add(pointLight2);
+          }
+        );
+
+        // Add mouse move event listener
+        document.addEventListener("mousemove", (event) => {
+          if (textMesh) {
+            const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+            textMesh.rotation.y = mouseX * 0.5;
+            textMesh.rotation.x = mouseY * 0.3;
+          }
+        });
+
+        animate();
+      }
+
+      function getCurrentColor() {
+        return document.body.classList.contains("light-mode")
+          ? 0x151514
+          : 0xd2c3a5;
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+
+        if (textMesh) {
+          textMesh.material.color.setHex(getCurrentColor());
+        }
+
+        // Update star colors
+        scene.children.forEach((child) => {
+          if (child instanceof THREE.Points) {
+            child.material.color.setHex(getCurrentColor());
+          }
+        });
+
+        // Animate water plane
+        if (waterPlane) {
+          const time = Date.now() * 0.001;
+          const vertices = waterPlane.geometry.attributes.position.array;
+
+          for (let i = 0; i < vertices.length; i += 3) {
+            const x = vertices[i];
+            const z = vertices[i + 2];
+            vertices[i + 1] =
+              Math.sin(x * 0.5 + time) * 0.2 + Math.sin(z * 0.5 + time) * 0.2;
+          }
+
+          waterPlane.geometry.attributes.position.needsUpdate = true;
+          waterPlane.geometry.computeVertexNormals();
+        }
+
+        // Rotate starfield slowly
+        if (scene.children) {
+          scene.children.forEach((child) => {
+            if (child instanceof THREE.Points) {
+              child.rotation.y += 0.0001;
+            }
+          });
+        }
+
+        renderer.render(scene, camera);
+      }
+
+      // Handle window resize
+      window.addEventListener("resize", () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+
+      // Initialize scene
+      init();
+    </script>
+    <script>
+      const toggleButton = document.getElementById("theme-toggle");
+      const body = document.body;
+
+      // Load saved theme on page load
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        body.classList.toggle("light-mode", savedTheme === "light");
+      }
+
+      const systemPrefersLight = window.matchMedia(
+        "(prefers-color-scheme: light)"
+      ).matches;
+      if (!savedTheme) {
+        body.classList.toggle("light-mode", systemPrefersLight);
+      }
+
+      toggleButton.addEventListener("click", () => {
+        const isLight = body.classList.toggle("light-mode");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+      });
+
+      // Contact form handling
+      function handleSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const message = form.message.value;
+
+        // Obfuscated email address
+        const parts = ["caleb", "@", "mokotahi", ".", "com"];
+        const recipient = parts.join("");
+
+        // Create mailto link
+        const mailtoLink = `mailto:${recipient}?subject=Contact from ${name}&body=${encodeURIComponent(
+          message
+        )}`;
+
+        // Open mailto link in new window
+        window.open(mailtoLink, "_blank");
+      }
+
+      // Modal functionality
+      function openCarouselModal(startIndex) {
+        const modal = document.getElementById("carouselModal");
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+
+        // Set the initial slide
+        currentSlide = startIndex;
+        updateCarousel();
+
+        // Start the carousel
+        startCarousel();
+      }
+
+      function closeCarouselModal() {
+        const modal = document.getElementById("carouselModal");
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+        stopCarousel();
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        const modal = document.getElementById("carouselModal");
+        if (event.target === modal) {
+          closeCarouselModal();
+        }
+      };
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeCarouselModal();
+        }
+      });
+
+      // Carousel functionality
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".carousel-image");
+      const dotsContainer = document.querySelector(".carousel-dots");
+
+      // Create dots
+      slides.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+
+      function updateCarousel() {
+        slides.forEach((slide, index) => {
+          slide.classList.toggle("active", index === currentSlide);
+        });
+
+        // Update dots
+        document.querySelectorAll(".dot").forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentSlide);
+        });
+      }
+
+      function moveCarousel(direction) {
+        currentSlide =
+          (currentSlide + direction + slides.length) % slides.length;
+        updateCarousel();
+      }
+
+      function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+      }
+
+      // Auto-advance slides every 5 seconds only when modal is open
+      let carouselInterval;
+
+      function startCarousel() {
+        stopCarousel(); // Clear any existing interval
+        carouselInterval = setInterval(() => moveCarousel(1), 5000);
+      }
+
+      function stopCarousel() {
+        if (carouselInterval) {
+          clearInterval(carouselInterval);
+        }
+      }
+
+      // AutoScript Modal functionality
+      function openAutoScriptModal(startIndex) {
+        const modal = document.getElementById("autoScriptModal");
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+
+        // Set the initial slide
+        autoScriptCurrentSlide = startIndex;
+        updateAutoScriptCarousel();
+
+        // Start the carousel
+        startAutoScriptCarousel();
+      }
+
+      function closeAutoScriptModal() {
+        const modal = document.getElementById("autoScriptModal");
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+        stopAutoScriptCarousel();
+      }
+
+      // AutoScript Carousel functionality
+      let autoScriptCurrentSlide = 0;
+      const autoScriptSlides = document.querySelectorAll(
+        "#autoScriptModal .carousel-image"
+      );
+      const autoScriptDotsContainer = document.querySelector(
+        "#autoScriptModal .carousel-dots"
+      );
+
+      // Create dots for AutoScript
+      autoScriptSlides.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToAutoScriptSlide(index));
+        autoScriptDotsContainer.appendChild(dot);
+      });
+
+      function updateAutoScriptCarousel() {
+        autoScriptSlides.forEach((slide, index) => {
+          slide.classList.toggle("active", index === autoScriptCurrentSlide);
+        });
+
+        // Update dots
+        document
+          .querySelectorAll("#autoScriptModal .dot")
+          .forEach((dot, index) => {
+            dot.classList.toggle("active", index === autoScriptCurrentSlide);
+          });
+      }
+
+      function moveAutoScriptCarousel(direction) {
+        autoScriptCurrentSlide =
+          (autoScriptCurrentSlide + direction + autoScriptSlides.length) %
+          autoScriptSlides.length;
+        updateAutoScriptCarousel();
+      }
+
+      function goToAutoScriptSlide(index) {
+        autoScriptCurrentSlide = index;
+        updateAutoScriptCarousel();
+      }
+
+      // Auto-advance slides every 5 seconds only when modal is open
+      let autoScriptCarouselInterval;
+
+      function startAutoScriptCarousel() {
+        stopAutoScriptCarousel(); // Clear any existing interval
+        autoScriptCarouselInterval = setInterval(
+          () => moveAutoScriptCarousel(1),
+          5000
+        );
+      }
+
+      function stopAutoScriptCarousel() {
+        if (autoScriptCarouselInterval) {
+          clearInterval(autoScriptCarouselInterval);
+        }
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        const zoraModal = document.getElementById("carouselModal");
+        const autoScriptModal = document.getElementById("autoScriptModal");
+        if (event.target === zoraModal) {
+          closeCarouselModal();
+        }
+        if (event.target === autoScriptModal) {
+          closeAutoScriptModal();
+        }
+      };
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeCarouselModal();
+          closeAutoScriptModal();
+        }
+      });
+    </script>
+    <style>
+      /* Thumbnail Grid Styles */
+      .thumbnails-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        gap: 8px;
+        margin: 0 auto 1rem;
+        padding: 8px;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        justify-content: center;
+        max-width: 300px;
+      }
+
+      .thumbnail {
+        aspect-ratio: 1;
+        overflow: hidden;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: transform 0.2s;
+        opacity: 0.85;
+      }
+
+      .thumbnail:hover {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+
+      .thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+      }
+
+      .modal-content {
+        position: relative;
+        width: 90%;
+        max-width: 1200px;
+        height: 90vh;
+        margin: 5vh auto;
+      }
+
+      .close-modal {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* Updated Carousel Styles */
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .carousel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .carousel-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .carousel-image.active {
+        opacity: 1;
+      }
+
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 1.5rem;
+        cursor: pointer;
+        font-size: 2rem;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+        z-index: 1001;
+      }
+
+      .carousel-button:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+
+      .carousel-button.prev {
+        left: 20px;
+      }
+
+      .carousel-button.next {
+        right: 20px;
+      }
+
+      .carousel-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 12px;
+        z-index: 1001;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .dot.active {
+        background: white;
+      }
+
+      /* Contact Form Styles */
+      .contact-form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .contact-form textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .contact-form button {
+        padding: 0.8rem 2rem;
+        background: #000;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        align-self: center;
+      }
+
+      .contact-form button:hover {
+        background: #333;
+      }
+
+      /* Light mode adjustments */
+      body.light-mode .contact-form input,
+      body.light-mode .contact-form textarea {
+        border-color: rgba(0, 0, 0, 0.2);
+      }
+
+      body.light-mode .contact-form input:focus,
+      body.light-mode .contact-form textarea:focus {
+        border-color: rgba(0, 0, 0, 0.4);
+      }
+
+      body.light-mode .contact-form button {
+        background: #333;
+      }
+
+      body.light-mode .contact-form button:hover {
+        background: #444;
+      }
+    </style>
+  </body>
+</html>

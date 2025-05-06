@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", "SF Pro Display", "Helvetica Neue", "Helvetica", "Arial",
+    sans-serif;
+  background-color: #151514;
+  color: #d2c3a5;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+@media screen and (prefers-color-scheme: light) {
+  body {
+    background-color: #d2c3a5;
+    color: #151514;
+  }
+}
+
+/* Default is dark mode */
+body {
+  background-color: #151514;
+  color: #d2c3a5;
+}
+
+/* Light mode class override */
+body.light-mode {
+  background-color: #d2c3a5;
+  color: #151514;
+}
+
+/* Optional: style other elements based on mode */
+body.light-mode .card {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+body .card {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+#text-container {
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.05rem;
+  background: linear-gradient(to top, #d2c3a5, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light-mode .hero h1 {
+  background: linear-gradient(to top, #151514, #000000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+section {
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  flex: 1 1 45%;
+  min-width: 280px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+input,
+textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.07);
+  color: #d2c3a5;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: #d2c3a5;
+  color: #151514;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #e6d9bd;
+}
+
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
