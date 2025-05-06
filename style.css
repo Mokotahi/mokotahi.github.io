@@ -185,3 +185,16 @@ footer {
   font-size: 0.85rem;
   opacity: 0.5;
 }
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  #text-container {
+    height: 220px;
+  }
+  .hero p {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+}

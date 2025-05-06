@@ -387,6 +387,37 @@
           }
         });
 
+        // Add touch gesture support for mobile
+        let lastTouchX = null;
+        let lastTouchY = null;
+        document.addEventListener("touchstart", (event) => {
+          if (event.touches.length === 1) {
+            lastTouchX = event.touches[0].clientX;
+            lastTouchY = event.touches[0].clientY;
+          }
+        });
+        document.addEventListener("touchmove", (event) => {
+          if (
+            textMesh &&
+            event.touches.length === 1 &&
+            lastTouchX !== null &&
+            lastTouchY !== null
+          ) {
+            const touch = event.touches[0];
+            const deltaX = touch.clientX - lastTouchX;
+            const deltaY = touch.clientY - lastTouchY;
+            // Adjust sensitivity as needed
+            textMesh.rotation.y += deltaX * 0.01;
+            textMesh.rotation.x += deltaY * 0.01;
+            lastTouchX = touch.clientX;
+            lastTouchY = touch.clientY;
+          }
+        });
+        document.addEventListener("touchend", () => {
+          lastTouchX = null;
+          lastTouchY = null;
+        });
+
         animate();
       }
 
