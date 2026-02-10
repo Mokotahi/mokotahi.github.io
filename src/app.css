@@ -1,0 +1,36 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 14px;
+  --color-text: #fff;
+  --color-bg: #000;
+  --color-link: #c9c9c9f0;
+  --color-link-hover: #fff;
+  --page-padding: 1.5rem;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.label {
+  letter-spacing: 0em !important;
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
